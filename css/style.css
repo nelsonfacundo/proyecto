@@ -10,12 +10,14 @@ body{
 
 .container{
   margin: 0 auto;
-overflow: hidden;
+  overflow: hidden;
+  width: auto;
 }
 
 header{
   background:linear-gradient(#1D2896, #741CB0);
   overflow: hidden;
+    width: auto;
 }
 
 
@@ -58,11 +60,11 @@ header  ul li a {
 /* MAIN */
 
 .main .banner {
-  width: 500px;
+  width: 400px;
   height: 300px;
   position: absolute;
   top:25%;
-  right: 30px;
+  right: 20px;
   border: 3px solid red;
   margin: auto;
   margin-top: 30px;
@@ -104,7 +106,7 @@ header  ul li a {
 }
 
 .main .menu ul{
-  background-color: #3B2F3B;
+  background-color: #420F3F;
   display: flex;
   flex-direction: row;
   border: 2px solid blue;
@@ -122,19 +124,79 @@ header  ul li a {
   text-decoration: none;
   font-size: 30px;
   color: white;
+  text-transform: uppercase;
 }
 
 .main .link{
   display: flex;
   justify-content: flex-end;
-  padding-left: 150px;
+  padding-left: 50px;
 }
 
 .main .link a {
-  background-color: #AD9409;
+  background-color: #B61543;
   color: white;
   text-decoration: none;
   border: 2px solid black;
   padding: 20px 80px;
   font-size: 50px;
+  text-transform: uppercase;
+}
+
+
+
+/* MAIN  CONTENIDO */
+
+.contenido {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 25%;
+  top: 28%;
+  width: 980px;
+  height: 700px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.contenido .block-noticias{
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background-color: #EEE3B1;
+  border: 1px solid black;
+
+}
+
+.contenido .block-noticias .noticias{
+  float: left;
+  padding-left: 30px;
+}
+
+.contenido .block-noticias .noticias h2{
+  display: inline;
+  padding-left: 50px;
+  padding-right: 150px;
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+
+
+}
+.contenido .block-noticias .more {
+  padding-top: 9px;
+  float: right;
+  margin-left: 200px;
+  padding-right: 50px;
+}
+
+.contenido .block-noticias .more a {
+  display: inline;
+  color: black;
+  padding-left: 10px;
+  font-size: 19px;
+  text-decoration: none;
+  margin: 15px;
+
 }
