@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+
+
+
+
+
 body{
   margin: 0;
   padding: 0;
@@ -5,6 +15,7 @@ body{
   background-position: fixed;
   background-size:100% 100%;
   max-width: 1180px;
+  font-family: grendel;
 }
 
 /* CABEZERA*/
@@ -59,7 +70,7 @@ background: linear-gradient(#1D2896, #741CB0);
  .banner {
   margin: 0 auto;
   margin-top: 50px;
-  width: 90%;
+  width: 1020px;
   height: 400px;
   border: 3px solid #A19CA1 ;
   border-radius: 15px;
@@ -93,29 +104,55 @@ background: linear-gradient(#1D2896, #741CB0);
 /* MAIN-CONTENIDO */
 
   .main-contenido{
-  width:960px;
-  height:500px;
+  width:1080px;
+  height: auto;
   margin:0 auto;
   display: flex;
   justify-content: center;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
 }
 
-.main-contenido .block-menu{
+.contenido{
+  width: 1020px;
+
+}
+
+.contenido .titulo {
+  text-align: center;
+  text-decoration: underline;
+  color: black;
+
+}
+
+.contenido .titulo  h1 {
+  font-size: 80px;
+  color: transparent;
+  background:linear-gradient(orange 30%, red 70%);
+  -webkit-background-clip:text;
+  text-transform:uppercase;
+  font-family: grendel;
+}
+
+
+
+
+.main-contenido .contenido .block-menu{
   width:920px;
+  height: 300px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
 }
 /*  MENU */
 
-.main-contenido .block-menu .block-incio{
+.main-contenido .contenido .block-menu .block-incio{
   width:720px;
   position: absolute;
   margin: 0 auto;
 }
 
-.main-contenido .block-menu .block-incio ul{
+.main-contenido .contenido .block-menu .block-incio ul{
   display: flex;
   flex-direction: row;
   margin-top:50px;
@@ -124,42 +161,42 @@ background: linear-gradient(#1D2896, #741CB0);
   border-radius: 10px;
 }
 
-.main-contenido .block-menu .block-incio ul li{
+.main-contenido  .contenido .block-menu .block-incio ul li{
   list-style: none;
   border: 1px solid red;
   margin-left: 23px;
   margin-right: 23PX;
 }
 
-.main-contenido .block-menu .block-incio ul li a{
+.main-contenido  .contenido .block-menu .block-incio ul li a{
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 /* LINK */
 
-.main-contenido .block-menu .block-link{
+.main-contenido .contenido .block-menu .block-link{
   margin: 0 auto;
   width: 920px;
   position: absolute;
 }
 
-.main-contenido .block-menu .block-link .link{
+.main-contenido .contenido .block-menu .block-link .link{
   display: flex;
   justify-content: flex-end;
-  margin-right: 10px;
-  margin-top: 30px;
+  margin-right: 30px;
+  margin-top: 25px;
 }
 
 
-.main-contenido .block-menu .block-link .link a{
+.main-contenido .contenido .block-menu .block-link .link a{
   padding:20px 50px;
   border: 3px solid black;
   background-color: red;
   text-decoration: none;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   text-transform: uppercase;
 }
