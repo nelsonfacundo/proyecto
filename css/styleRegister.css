@@ -1,41 +1,223 @@
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+
+
+
 body{
   background-color: black;
+  margin: 0 ;
+    font-family: grendel;
   }
 
+
 .container {
-  margin: auto;
+  margin: 0 auto;
   position: relative;
-  overflow:hidden;
   max-height: 1180px;
 }
 
 
+/* HEADER */
+
+.header{
+
+margin: 0 auto;
+overflow: hidden;
+background: linear-gradient(#1D2896, #741CB0);
+}
+
+.header img{
+  float: left;
+  width: 50px;
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.header ul{
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+
+.header ul li{
+  margin-left:10px;
+  margin-right: 10px;
+  border: 2px solid white;
+  list-style: none;
+  float: right;
+  background-color: red;
+}
+
+.header ul li a{
+  padding : 5px 10px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+
+.header .menu {
+  display: flex;
+  justify-content: center;
+  margin-left:300px;
+
+}
+
+.header .menu ul {
+  display: block;
+  margin: 0 auto;
+}
+
+/* BLOQUE IMAGEN DERCHA */
 
 .derecha{
   float: left;
+  position: relative;
 }
 
 .derecha img{
-  width: 500px;
+  width: 450px;
 }
 
 
+/* BLOQUE IMAGEN IZQUIERDA */
+
 .izquierda{
+  position: relative;
   float: right;
 }
 
 .izquierda img {
-  width: 500px;
+  width: 450px;
 }
 
-.Contenido{
+/* CONTENIDO */
+
+.contenido{
   width: 750px;
-  height: 600px;
+  height: 1000px;
+  position: relative;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top:150px;
   border: 3px solid red;
   border-radius: 20px;
-  background-color: white;
+  background-color: black;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+
+.contenido .titulo  h1 {
+  font-size: 70px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: grendel;
+  text-transform:uppercase;
+  color: transparent;
+  background-image: url("https://media.giphy.com/media/xUPGcyTe2I8FvXy9EI/giphy.gif");
+  -webkit-background-clip:text;
+}
+
+
+
+/*CONTENIDO DE FORMULARIO */
+
+.contenido .formulario{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 30px;
+  width: 650px;
+  height: 700px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-image: url("https://media.giphy.com/media/FPlzp50M94WFW/giphy.gif");
+  background-size: 100% 100%;
+}
+
+
+.contenido .formulario .formulario-container{
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+
+}
+
+.contenido .formulario .formulario-container h2{
+  font-size:50px;
+  color:white;
+  text-decoration: underline;
+}
+
+
+
+.contenido .formulario .formulario-container .formulario-edad p {
+  color: white;
+  font-size: 20px;
+}
+
+.contenido .formulario .formulario-container .formulario-edad .block-display-edad {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+.contenido .formulario .formulario-container label{
+  font-size: 25px;
+  color:white;
+}
+
+.contenido .formulario .formulario-container input{
+  width: 250px;
+  height: 30px;
+  text-align: center;
+}
+
+
+.contenido .formulario .formulario-container .formulario-edad .block-display-edad  .formulario-mes{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.contenido .formulario .formulario-container .formulario-edad .block-display-edad  .formulario-dia{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.contenido .formulario .formulario-container .formulario-edad .block-display-edad  .formulario-año{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.contenido .formulario .formulario-container .formulario-edad .block-display-edad  select{
+  width: 80px;
+  min-height:25px;
+}
+
+.contenido .formulario .formulario-container .formulario-button{
+  margin-top: 80px;
+}
+
+.contenido .formulario .formulario-container .formulario-button button {
+  width: 250px;
+  height: 30px;
+  border: none;
+  background: none;
+  padding: 15px 15px;
+  color: white;
+  font-size: 40px;
+  text-decoration: underline;
 }
