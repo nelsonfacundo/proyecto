@@ -22,58 +22,74 @@ body{
 
 /* HEADER */
 
-.header{
 
-margin: 0 auto;
-overflow: hidden;
-background: linear-gradient(#1D2896, #741CB0);
-}
-
-.header img{
-  float: left;
-  width: 50px;
-  display: block;
-  margin-bottom: 5px;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.header ul{
-  display: block;
+  .header{
   margin: 0 auto;
-  margin-top: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(#1D2896, #741CB0);
+  }
+
+.header .logo img {
+  width: 80px;
 }
-
-
-.header ul li{
-  margin-left:10px;
-  margin-right: 10px;
-  border: 2px solid white;
-  list-style: none;
-  float: right;
-  background-color: red;
-}
-
-.header ul li a{
-  padding : 5px 10px;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  display: inline-block;
-
-}
-
 
 .header .menu {
+  margin-left: auto;
+  margin-right: 50px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-left:300px;
-
 }
 
 .header .menu ul {
-  display: block;
-  margin: 0 auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header .menu ul li {
+margin-left: 55px;
+margin-right: 55px;
+list-style: none;
+}
+
+.header .menu ul li a {
+  text-decoration: none;
+  color: white;
+  padding :10px 20px;
+  background-color: red;
+  border : 2px solid black;
+  text-transform: uppercase;
+}
+
+
+.header .usuario {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header .usuario ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.header .usuario ul li {
+  list-style:   none;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.header .usuario ul li a {
+  text-decoration: none;
+  color: white;
+  padding:10px 20px;
+  border: 2px solid black;
+  background-color: red;
 }
 
 /* BLOQUE IMAGEN DERCHA */
@@ -240,81 +256,79 @@ background: linear-gradient(#1D2896, #741CB0);
 }
 /* FOOTER */
 
-.container .main-footer {
-  border-top: 2px solid white;
-  margin-top :100px;
-  border-bottom: 2px solid white;
-  height: 150px;
+
+.main-footer {
+  background-color: red;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 950px;
+  display: flex;
+  position: relative;
+}
+
+
+.main-footer .logo img {
+  width: 100px;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.footer-container .block-footer {
+  display: flex;
+  justify-content: center;
+  margin:  0 auto;
+}
+.footer-container .block-footer ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px ;
+}
+
+.footer-container .block-footer ul  li {
+  list-style: none;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer-container .block-footer ul  li  a {
+  padding-left:10px;
+  padding-right: 10px;
+  color: white;
+  text-decoration: none;
   background-color: red;
 }
 
 
-.container .main-footer img{
-  width: 100px;
-  float: left;
-  margin-top: 25px;
-  margin-left: 10px;
-}
-
-
-.container .main-footer  .block-footer  {
-  position: relative;
-  margin: 0 auto;
-  display: flex;
+.footer-container .block-footer-final {
+  display flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
-
-
-.container .main-footer  .block-footer  ul  {
-  margin-top:30px;
-  margin-right: 100px;
-  display: flex;
+.footer-container .block-footer-final ul {
+  display:flex;
   flex-direction: row;
 }
 
-.container .main-footer  .block-footer  ul li   {
-  margin-left: 30px;
-  margin-right: 30px;
+
+.footer-container .block-footer-final ul li  {
   list-style: none;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.container .main-footer  .block-footer  ul li a {
-  color:white;
-  font-size: 20px;
+.footer-container .block-footer-final ul li a  {
+  padding-left:10px;
+  padding-right: 10px;
+  color: white;
+  text-decoration: none;
+  background-color: red;
 }
-
-
-.container .main-footer  .block-footer-final  {
-  width: 500px;
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-
-
-.container .main-footer   .block-footer-final  ul  {
-  margin-top:30px;
-  margin-right: 100px;
-  display: flex;
-  flex-direction: row;
-}
-
-.container .main-footer    .block-footer-final  ul li   {
-  margin-left: 30px;
-  margin-right: 30px;
-  list-style: none;
-}
-
-.container .main-footer  .block-footer-final  ul li a {
-  color:white;
-  font-size: 20px;
-}
-
-
-
 
 /* MEDIAS QUERIES */
 
@@ -329,27 +343,14 @@ background: linear-gradient(#1D2896, #741CB0);
       width: 0px;
     }
 
-    .container .main-footer {
-      border-top: 2px solid white;
-      width: 100%;
-      margin-top :100px;
-      border-bottom: 2px solid white;
-      height: 150px;
-      background-color: red;
-    }
 
-    .container .main-footer  .block-footer  {
-      margin: 0 auto;
-      
-    }
-
-
-}
 
 
 /* PHONES */
-@media (max-width: 767.98px) {
+@media (min-width: 767.98px) {
   }
+
+
 
 
 /* TABLES */
@@ -375,7 +376,6 @@ background: linear-gradient(#1D2896, #741CB0);
     background-color: black;
     margin: 0 ;
     font-family: grendel;
-    max-width: 100%;
     }
 
 
@@ -388,56 +388,72 @@ background: linear-gradient(#1D2896, #741CB0);
 
   .header{
   margin: 0 auto;
-  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
   background: linear-gradient(#1D2896, #741CB0);
   }
 
-  .header img{
-    float: left;
-    width: 50px;
-    display: block;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-top: 10px;
-  }
+.header .logo  img {
+  width: 80px;
+}
 
-  .header ul{
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
+.header .menu {
+  margin-left: auto;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.header .menu ul {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-  .header ul li{
-    margin-left:10px;
-    margin-right: 10px;
-    border: 2px solid white;
-    list-style: none;
-    float: right;
-    background-color: red;
-  }
+.header .menu ul li {
+margin-left: 55px;
+margin-right: 55px;
+list-style: none;
+}
 
-  .header ul li a{
-    padding : 5px 10px;
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    display: inline-block;
-
-  }
-
-
-  .header .menu {
-    display: flex;
-    justify-content: center;
+.header .menu ul li a {
+  text-decoration: none;
+  color: white;
+  padding :10px 20px;
+  background-color: red;
+  border : 2px solid black;
+  text-transform: uppercase;
+}
 
 
-  }
+.header .usuario {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
-  .header .menu ul {
-    display: block;
-    margin: 0 auto;
-  }
+.header .usuario ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.header .usuario ul li {
+  list-style:   none;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.header .usuario ul li a {
+  text-decoration: none;
+  color: white;
+  padding:10px 20px;
+  border: 2px solid black;
+  background-color: red;
+}
 
   /* BLOQUE IMAGEN DERCHA */
 
