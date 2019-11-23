@@ -37,8 +37,9 @@
     border-radius:10px;
     }
 
+ /* TITULO  */
 
-    .titulo {
+    .title {
         width: 100%;      
     }
    
@@ -54,6 +55,8 @@
       }
 
 
+
+      /* FORMULARIO*/
 
     .formulario {
         width: 100%;
