@@ -46,6 +46,7 @@ body {
 #main .titulo  h1 {
   font-size: 80px;
   font-family: grendel;
+  text-align: center;
   display: block;
   text-transform:uppercase;
   color: transparent;
