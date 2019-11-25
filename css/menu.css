@@ -78,13 +78,13 @@
     }
 
     .menu {
-      position: none;
       transform: none;
       transition:none;
       display: flex;
       justify-content: center;
       top: 0 ;
       right: 0;
+      height: 65px;
       background: 0;
       
     }
