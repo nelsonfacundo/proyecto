@@ -84,21 +84,31 @@
     background-color: black;
   }
 
+
+ 
 .icono-facebook{
-  padding: 10px 10px;
-  }
+  margin:5px 5px;
+}
+
+ .texto-facebook{
+  margin-top: 6px;
+ }
 
 .icono-steam{
-  padding: 10px 10px;
+  margin:5px 5px;
  }
+
+ .texto-steam{
+  margin-top: 6px;
+}
 
 
 
 .fab {
   color:white;
+  font-size: 30px;
   font-size: 40px;
 }
-
 
 
 
