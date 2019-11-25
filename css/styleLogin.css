@@ -8,14 +8,10 @@
   src: url("../fuentes/grendel.ttf");
 }
 
-
-
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  padding:0 ;
 
+}
  
   body {
     background: black;
@@ -35,7 +31,7 @@
 
  /* CONTENIDO */
  .contenido {
-  width: 80%;
+  width: 98%;
   margin: 0 auto;
   border:3px solid red;
   border-radius:10px;
@@ -88,25 +84,18 @@
   }
 
 .icono-facebook{
-  margin:5px 5px;
-  
- }
-
- .texto-facebook{
-  margin-top: 5px;
-}
+  padding: 10px 10px;
+  }
 
 .icono-steam{
-  margin:5px;
+  padding: 10px 10px;
  }
 
- .texto-steam{
-  margin-top: 5px;
-}
+
 
 .fab {
   color:white;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 

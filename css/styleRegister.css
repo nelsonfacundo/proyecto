@@ -6,14 +6,12 @@
     src: url("../fuentes/grendel.ttf");
   }
   
+  *{
+      padding: 0;
+  }
 
-*{
-   margin: 0;
-    padding: 0;
-   box-sizing: border-box;
-}
 
-  
+
   body {
     background: black;
     margin: 0;
@@ -31,7 +29,7 @@
 /* CONTENIDO */  
    
 .contenido {
-    width: 80%;
+    width: 98%;
     margin: 0 auto;
     border:3px solid red;
     border-radius:10px;
