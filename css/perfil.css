@@ -1,204 +1,164 @@
+@import url(menu.css);
+@import url(footer.css);
+
+
+
 @font-face {
-    font-family: "grendel";
-    src: url("../fuentes/grendel.ttf");
-  }
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: grendel;
-    background-image: url("../img/fondo.jpg");
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
-  
-  .container {
-    width: 100%;
-   }
-  
-  /* HEADER */
-  
-  #header {
-    width: 100%;
-    height: 65px;
-    background: rgb(13, 6, 53);
-    color: white;
-    position: fixed;
-    top: 0 ;
-    left: 0;
-    z-index: 100;
-  }
-  
-  .main-header{
-    width: 98%;
-    margin: 0 auto;
-  }
-  
-  .main-header img {
-    width: 63px;
-    float: left;
-  }
-  
-  
-  #menu-bar{
-    display: none;
-  }
-  
-  
-  
-  #header label {
-    float: right;
-    font-size: 30px;
-    margin: 15px 5px;
-    cursor: pointer;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 65px;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(22, 17, 68, 0.9);
-    transition: all 0.5s;
-    transform: translateX(-100%);
-  }
-  
-  .menu a {
-    display: block;
-    color:white;
-    text-transform: uppercase;
-    height: 65px;
-    text-decoration: none;
-    font-size: 25px;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255,255,0.5);
-  }
-  
-  .menu a:hover{
-    background: rgba(255, 255,255,0.3);;
-  }
-  
-  
-  #header .main-header {
-    display:table; /*limpia la flotacion */
-  }
-  
-  #menu-bar:checked ~ .menu {
-    transform: translateX(0%);
-  }
-
-  /* container abajo*/
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
 
 
-body{
-   text-align: center;
-   }
 
-#cont{
-  background-color:rgba(27, 6, 77, 0.87);
-  width: 65%;
-  height: 500px;
-  margin: 0 auto 0 auto;
-  margin-top: 100px;
-  text-align: center;
-  border: 1px solid black;
-  overflow: hidden;
+*{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  }
+ }
 
 
-#contenido{ 
-  background-color: rgba(255,255,255,0.5);
+body {
+  font-family: grendel;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  background-image: url("../img/fondo.jpg");
+}
+
+.container{
+  width:100%;
+}
+
+
+.contenido
+{
+  max-width: 1000px;
   width: 100%;
-  margin-bottom: 70px;
+  margin: 125px auto;
+  height: 700px;
+  background-color: rgba(255,255,255,0.5);
   text-align: center;
   padding: 5px;
   border: 2px solid black;
 }
 
 
-#pie{
-   clear: both;
-    width: 80%;
-    height: 80%;
-    margin-left: 55px;
-    text-align: left;
-    position: relative;
-    bottom: 35%;
-    left: 5%;
-  }
-  #pie h2{
-    color: white;
-  }
-
-#contenido h2{
-  font-size: 18px;
-  color: black;
-  font-weight: normal
-   }
- 
-#menu{
-    width: 20%;
-    float: right;
-    background-color: lightgrey;
-    margin-top: 5px;
-    margin-right: 3%;
-    border: 2px solid black;
-    position: relative;
-    top: 35%;
-    right: 15%;
-
-
+#content-header
+{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
 }
-#menu ul{
-  list-style-type: none;
-  font-size: 15px;
+#content-footer
+{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: bottom;
+  padding: 30px 50px;
+}
+section
+{
+  display: block;
+}
+
+#cont{
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#contenide{
+  background-color: #a9a87f;
+  color: black;
+  padding: 2px;
+  border: 2px solid black;
+}
+
+h3
+{
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  color: #a9a87f;
+}
+
   
-}
+  
+  #pie{
+     clear: both;
+      width: 80%;
+      height: 400px;
+      float: left;
+      margin-left: 55px;
+      text-align: left;
+      position: relative;
+      bottom: 100px;
+      left: 50%;
+
+    }
+    #pie h2{
+      color: white;
+    }
+  
+  #contenido h2{
+    font-size: 18px;
+    color: black;
+    font-weight: normal
+     }
+   
+  #menu{
+      width: 20%;
+      height: 100%;
+      float: right;
+      background-color: lightgrey;
+      border: 2px solid black;
+      position: relative;
+      top: 350px;
+      right: 70%;
+  
+  
+  }
+  #menu ul{
+    list-style-type: none;
+    font-size: 15px;
     
-#valores{
-  background-color: blanchedalmond;
-  width: 35%;
-  height: 70%;
-  font-size: 15 px;
-  color: black;
-  font-weight: normal;
-  line-height: 40px;
-  border: 2px solid black;
-  padding: 15px;
-
-
+  }
+      
+  #valores{
+    background-color: blanchedalmond;
+    width: 35%;
+    height: 100%;
+    font-size: 15 px;
+    color: black;
+    font-weight: normal;
+    line-height: 60px;
+    border: 2px solid black;
+    padding: 15px;
+  
+  
+    }
+  
+  #foto{
+    width: 180px;
+    height: 180px;
+    float: left;
+    background-color: cyan;
+    border: 2px solid black;
+    position:relative;
+    left: 100px;
+    bottom: 450px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #v1{
+    text-decoration: underline;
+  }
+  
+  #v2{
+    font-style: italic;
+    text-align: center;
   }
 
-#foto{
-  width: 25%;
-  height: 25%;
-  float: right;
-  background-color: cyan;
-  border: 2px solid black;
-  position:relative;
-  right: 15%;
-  bottom: 115%;
-  text-align: center;
-  padding: 20px;
-}
-
-#v1{
-  text-decoration: underline;
-}
-
-#v2{
-  font-style: italic;
-  text-align: center;
-}
-
-/* QUERIES */
+  /* QUERIES */
 @media screen and (max-width: 1200px){
   #valores{
   font-size:13px;
@@ -286,7 +246,7 @@ body{
       }
       }
 
-      @media screen and (max-width: 390px){
+      @media screen and (max-width: 464px){
         #valores{
           font-size:5px;
           width: 100px;
@@ -305,8 +265,9 @@ body{
             font-size: 6px; 
           }
           #foto{
+            width:100%;
             font-size: 7px;
-            right: 2%;
-            width: 20%;
+            right: 0px;
+            top: 1500px;
           }
-          }
+        }
