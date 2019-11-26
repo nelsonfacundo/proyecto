@@ -3,24 +3,25 @@
     height: 100px;
     background: rgb(13, 6, 53);
   }
-  
+
   #footer img {
     width: 62px;
     border-radius: 150px;
     margin-top: 20px;
     margin-left: 10px;
     float: left;
-  
+
   }
-  
+
   #footer ul {
     margin-top:20px;
+    padding-top: 25px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
-  
+
   #footer ul li  {
     padding: 5px 10px;
     list-style: none;
@@ -28,7 +29,3 @@
   #footer ul li a {
     color: white;
   }
-  
-
-
- 
