@@ -2,6 +2,13 @@
 
 require("funciones.php");
 
+
+//$fechas = getdate();
+//if( ($fechas["year"] - $_POST["año"]) < 18) {
+//  var_dump("sos menor");
+//  exit;
+//}
+
 if($_POST) {
 
     // ver función validar() en archivo funciones.php

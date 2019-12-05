@@ -56,4 +56,8 @@ function guardarUsuario($data) {
     return $usuario;
 }
 
+function validaredad(){
+  
+}
+
 ?>
