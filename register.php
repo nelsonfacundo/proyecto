@@ -1,3 +1,39 @@
+<?php
+
+require("funciones.php");
+
+if($_POST) {
+
+    // ver función validar() en archivo funciones.php
+    $errores = validar($_POST);
+
+    if(!$errores) {
+        // llamo a la función guardarUsuario() --> me devuelve un array asociativo con los datos que envió el usuario
+        $usuario = guardarUsuario($_POST);
+       
+        // me traigo el contenido del archivo usuarios.json
+        $listaDeUsuarios = file_get_contents('usuarios.json');
+
+        // convierto ese contenido a formato array para poder manipular los datos
+        $arrayUsuarios = json_decode($listaDeUsuarios, true);
+
+        // en la última posicón del array de usuarios me guardo al nuevo usuario
+        $arrayUsuarios[] = $usuario;
+
+        // convierto el aray de usuarios a formato json para volver a guardarlo en el archivo de usuarios
+        $todosLosUsuarios = json_encode($arrayUsuarios);
+
+        // guardo el json completo de ususarios en usuarios.json 
+        file_put_contents('usuarios.json', $todosLosUsuarios);
+
+        // por ahora redirecciono a la misma vista
+        header('Location: register.php');
+        
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -32,25 +68,35 @@
             </div>
         </div>
         <div class="contenido">
-                    <div class="title">
-                      <h1>Shovel knight</h1>
-                    </div>
-                    <div class="formulario">
-                      <div class="formulario-container">
-                          <div class="subtitulo">
+            <div class="title">
+              h1>Shovel knight</h1>
+            </div>
+              <div class="formulario">
+                 <div class="formulario-container">
+                   <form action="" method="post" enctype="multipart/form-data" >   
+                         <div class="subtitulo">
                               <h2>Registro</h2>
                           </div>
                           <div class="formulario-nombre">
-                            <label for="nombre">Usuario:</label><br>
-                                <input id="nombre" type="text" name="nombre" placeholder="ingrese su nombre">
-                          </div>
+                            <label for="username">Usuario:</label><br>
+                            <input type='text' name='username' value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>" placeholder="Ingresá un nombre de usuario"><br/>
+                              <?php if(isset($errores['username'])): ?>
+                              <span style="color:red;"><?= $errores['username']?></span>
+                               <?php endif; ?>
+                            </div>
                           <div class="formulario-pass">
                             <label for="pass">Contraseña:</label><br>
-                                <input id="pass" type="password" name="pass" placeholder="ingrese su contraseña">
+                              <input id="pass" type="password" name="pass" placeholder="Ingresá una contraseña"><br>
+                               <?php if(isset($errores['pass'])): ?>
+                               <span style="color:red;"><?= $errores['pass']?></span>
+                              <?php endif; ?>
                           </div>
                           <div class="formulario-email">
                             <label for="email">Email:</label><br>
-                              <input id="email" type="email" name="email" placeholder="ingrese su email">
+                              <input id="email" type="email" name="email"value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Ingresá tu email"><br/>
+                              <?php if(isset($errores['email'])): ?>
+                              <span style="color:red;"><?= $errores['email']?></span>
+                              <?php endif; ?>
                           </div>
                           <div class="formulario-edad">
                               <p>Fecha de nacimiento:</p>
@@ -149,13 +195,14 @@
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>
-                              <div class="terminos">
+                      </form>  
+                           <div class="terminos">
                                 <p>Al registrarte,Aceptas nuestras condiciones de uso  y policita de privacidad</p>
                                 <p>Ya tienes cuenta ? <a href="login.html">iniciar sesion</a> </p>
-                              </div>
-                      </div>
-                    </div>
-        </div>
+                           </div>
+                  </div>
+                </div>
+           </div>
         <div id="footer">
             <img src="img/logo.jpg">
               <div class="block-footer">
