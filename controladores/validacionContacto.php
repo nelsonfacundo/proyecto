@@ -39,11 +39,11 @@ return $errores;
 
 }
 
-function persistirDato($arrayE, $campo) {
-    if( isset($arrayE[$campo]) ) {
+function persistirDatos ($arrayDe, $campo) {
+    if (isset ($arrayDe, $campo)) {
         return "";
     } else {
-        if(isset($_POST[$campo])) {
+        if (isset($_POST[$campo])){
             return $_POST[$campo];
         }
     }

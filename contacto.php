@@ -5,19 +5,17 @@ require_once('controladores/validacionContacto.php');
 $arrayDeErrores = "";
 
 if($_POST) {
-    $arrayDeErrores = validacionDeMensaje($_POST);
+    $arrayDeErrores = validacionDeMensaje($array);
     if(count($arrayDeErrores) === 0) {
-        // Envío el mensaje
+        // Envío los datos
         $datosFinales = [
-            'nombre' => trim($_POST['nombre']),
-            'email' => $_POST['email'],
-            'mensaje' => $_POST['mensaje']
+            'nombre' => $array['nombre'],
+            'email' => $array['email'],
+            'mensaje' => $array['mensaje']
         ];
-        // ENVIAR A LA BASE DE DATOS $datosFinales
-        $jsonDeMensaje = json_encode($datosFinales);
-        file_put_contents('mensajes.json', $jsonDeMensaje . PHP_EOL, FILE_APPEND);
-        header("Location: register.php");
-        
+       
+        $jsonDeUsuario = json_encode ($datosFinales);
+        file_put_contents ("mensajes.json", $jsonDeUsuario . PHP_EOL, FILE_APPEND);
     }
     
     
@@ -70,7 +68,7 @@ if($_POST) {
                             
                         <div class="form-nombre">
                             <label class="name" for="nombre">Nombre</label><br> <br>
-                            <input id="nombre" type="text" name="nombre" placeholder="Ingrese su usuario">
+                            <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre">
                         </div> <br>
                         <div class="form-mail">
                             <label class="mail" for="mail">Correo electrónico</label><br> <br>
@@ -78,8 +76,7 @@ if($_POST) {
                         </div> <br>
                         <div class="form-message">
                             <label class="message" for="message">Mensaje</label><br> <br>
-                            <textarea name="message" id="message" cols="35" rows="8"
-                                placeholder="Escriba su mensaje aquí..."></textarea>
+                            <input id ="message" type="comment" name = "message" placeholder = "Escriba su mensaje...">
                         </div>
                         <div class="formulario-button">
                             <button type="submit" name="button">Enviar</button>
