@@ -94,13 +94,13 @@ if($_POST) {
         <img src="img/logo.jpg">
         <div class="block-footer">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Iniciá sesión</a></li>
-                <li><a href="ranking.html">Ranking</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="ABM.html">ABM</a></li>
-                <li><a href="faq.html">Preguntas frecuentes</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="login.php">Iniciá sesión</a></li>
+                <li><a href="ranking.php">Ranking</a></li>
+                <li><a href="perfil.php">Perfil</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
+                <li><a href="ABM.php">ABM</a></li>
+                <li><a href="faq.php">Preguntas frecuentes</a></li>
 
             </ul>
         </div>

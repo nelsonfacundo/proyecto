@@ -369,7 +369,7 @@
                  <li><a href="#">Quienes</a></li>
                  <li><a href="#">Servicios</a></li>
                  <li><a href="#">Sucursales</a></li>
-                 <li><a href="contacto.html">Contacto</a></li>
+                 <li><a href="contacto.php">Contacto</a></li>
                  <li><a href="#">Terminos</a></li>
                  <li><a href="#">Privacidad</a></li>
                  <li><a href="#">Cookies</a></li>
