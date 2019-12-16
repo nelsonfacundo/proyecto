@@ -5,14 +5,20 @@
 function validar($data) {
 
     $errores = [];
-
+    $verificacion = json_decode(file_get_contents('usuarios.json'), true);
 
       //   VALIDACION NOMBRE 
       if(isset($data["username"])){
         if(empty($data["username"])){
           $errores["username"] = "Usuario esta vacio";
-        } if (strlen (trim ($data["username"])) < 5){
+        } else if (strlen (trim ($data["username"])) < 5){
           $errores["username"]  = "Usuario tiene que tener al menos 5 caracteres";
+           } else {
+            foreach($verificacion as $usuario){
+              if($usuario["username"] == $data["username"]){
+                $errores["username"] = "Este usuario ya esta registrada";
+              }
+            }
            }
        } 
 
@@ -23,7 +29,13 @@ function validar($data) {
           $errores["email"] = "Email esta vacio";
         }elseif (!filter_var($data["email"],FILTER_VALIDATE_EMAIL)) {
             $errores["email"]  = "Debes ingresar un email valido";
-        }
+        }else {
+          foreach($verificacion as $usuario){
+            if($usuario["email"] == $data["email"]){
+              $errores["email"] = "Este email ya esta registrado";
+            }
+          }
+         }
       }
         
         // VALIDACION CONTRASEÑA 
@@ -34,6 +46,7 @@ function validar($data) {
             $errores["password"]  = "La contraseña debe tener al menos 6 caracteres";
           }
         }
+        
       
         //VALIDACION RECONTRASEÑA 
         if(isset($data["repassword"])){
@@ -50,6 +63,7 @@ function validar($data) {
               $errores["año"]   = "Tienes que ser mayor de 18";
           } 
 
+
         return $errores;
       }
 
@@ -65,5 +79,7 @@ function guardarUsuario($data) {
     
     return $usuario;
 }
+
+
 
 ?>
