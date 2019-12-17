@@ -28,26 +28,32 @@ body {
 .container{
   width: 100%;
 }
-.contenido
-{
+
+.contenido{
   max-width: 1000px;
   width: 100%;
   margin: 125px auto;
-  height: 70vh;
+  height: 507px;
+  border:3px solid red;
+  border-radius:10px;
 }
 
 #content-all{
+  width: 100%;
   background: rgb(13, 6, 53, 0.9);
   background-size: 100% auto;
   box-sizing: border-box;
-  position: relative;
+  height: 600px;
+  border-radius:10px;
+  overflow: hidden;
 }
 
 #content-header{
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top;
-  border: 2px dashed white;
+  border:2px solid white;
+  border-radius:10px;
 }
 
 #content-footer{
@@ -59,71 +65,89 @@ body {
 
 #cont{
   overflow: hidden;
-  position: relative;
-  list-style-type: none;  
-  display: block;
+  display: flex;
 }
 
+#fotoPerfil{
+  width:50%;
+  height: 30%;
 
+}
 .foto{
     border: 1px dashed white;
     text-align: center;
 }
 
+
 #menu{
     border: 2px solid black;
     list-style-type: none;
+    position: absolute;
+    bottom: 250px;
 }
 
 #info{
   list-style-type: none;
 }
 
-@media only screen and (max-width: 320px){
-    #content-all{
-        width: 100%;
-        height: 500px;
-      }
-      #content-header{
-        height: 7vh;
-        font-size: 15px;
-        text-align: center;
-        padding: 4px;
-    }
-    #cont{
-        width: 90%;
-        height: 90%;
-        border: 2px dashed black;
-        padding: 5%;
-        margin: 0 auto;
-        margin-top: 5px;
-    }
-
-
-    .foto{
-        width: 45%;
-        height: 20vh;
-        float: left;
-    }
-
-    #menu{
-      width: 45%;
-      background-color: lightgray;
-      margin-left: 130px;
-      height: 30vh;
-      font-size: 15px;
-    }
-    #info{
-      width: 90%;
-      background-color: lightgray;
-      margin: 0 auto;
-      margin-top: 10px;
-      height: 40vh;
-      color: black;
-    }
+ul{
+  list-style: none;
 }
 
-@media only screen and (max-width: 410px){
+
+@media only screen and (max-width: 600px){
+  #content-all{
+      width: 100%;
+    }
+    #content-header{
+      height: 7vh;
+      font-size: 15px;
+      text-align: center;
+      padding: 4px;
+  }
+  #cont{
+      width: 100%;
+      height: 90%;
+      border: 1px solid black;
+      padding: 5%;
+      margin: 0 auto;
+      margin-top: 5px;
+      display: inline-block;
+
+  }
+
+  .foto{
+      width: 150px;
+      height: 13vh;
+      margin-left: 15px;
+    
+  }
+
+  #menu{
+    width: 150px;
+    background-color: lightgray;
+    margin-left: 150px;
+    height: 17vh;
+    padding: 2px;
+    font-size: 12px;
+    position: absolute;
+    right: 7%;
+    bottom: 360px;
+  }
+
+  #info{
+    width: 90%;
+    background-color: lightgray;
+    margin: 0 auto;
+    margin-top: 90px;
+    height: 30vh;
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 1800px){
   #content-all{
       width: 100%;
       height: 500px;
@@ -135,38 +159,52 @@ body {
       padding: 4px;
   }
   #cont{
-      width: 90%;
+      width: 100%;
       height: 90%;
-      border: 2px dashed black;
+      border: 1px solid black;
       padding: 5%;
       margin: 0 auto;
       margin-top: 5px;
       display: inline-block;
-      position: absolute;
+
   }
 
   .foto{
-      width: 35%;
-      height: 20vh;
+      width: 130px;
+      height: 13vh;
+      margin-left: 15px;
     
   }
 
   #menu{
-    width: 50%;
+    width: 150px;
     background-color: lightgray;
     margin-left: 150px;
-    height: 30vh;
-    font-size: 15px;
-    bottom: 50px;
-    right: 5px;
+    height: 17vh;
+    padding: 2px;
+    font-size: 12px;
+    position: absolute;
+    right: 15%;
+    bottom: 360px;
   }
+
   #info{
     width: 90%;
     background-color: lightgray;
     margin: 0 auto;
-    margin-top: 10px;
-    height: 40vh;
+    margin-top: 60px;
+    height: 30vh;
     color: black;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  #menu{
+    width: 120px;
+    right: 2%;
   }
 }
 
