@@ -39,17 +39,16 @@ return $errores;
 
 }
 
-function persistirDatos ($arrayDe, $campo) {
-    if (isset ($arrayDe, $campo)) {
-        return "";
-    } else {
-        if (isset($_POST[$campo])){
-            return $_POST[$campo];
-        }
-    }
+function guardarMensaje($array) {
+    
+    $usuario = [
+        "nombre" => $array["nombre"],
+        "email" => $array["email"],
+        "mensaje" => $array["mensaje"]
+    ];
+    
+    return $usuario;
 }
-
-
 
 
 ?>
