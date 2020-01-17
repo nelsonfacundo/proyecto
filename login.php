@@ -82,14 +82,13 @@
               <img src="img/logo.jpg">
                 <div class="block-footer">
                   <ul>
-                     <li><a href="#">Home</a></li>
-                     <li><a href="#">Quienes</a></li>
-                     <li><a href="#">Servicios</a></li>
-                     <li><a href="#">Sucursales</a></li>
-                     <li><a href="contacto.php">Contacto</a></li>
-                     <li><a href="#">Terminos</a></li>
-                     <li><a href="#">Privacidad</a></li>
-                     <li><a href="#">Cookies</a></li>
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="login.php">Iniciá sesión</a></li>
+                  <li><a href="ranking.php">Ranking</a></li>
+                  <li><a href="perfil.php">Perfil</a></li>
+                  <li><a href="contacto.php">Contacto</a></li>
+                  <li><a href="ABM.php">ABM</a></li>
+                  <li><a href="faq.php">Preguntas frecuentes</a></li>
                       </ul>
                 </div> 
       </div>
