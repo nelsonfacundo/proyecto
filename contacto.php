@@ -3,13 +3,13 @@
 if(isset($_POST['submit'])) {
     $file = "mensajes.json";
     $arr = array(
-        'nombre'     => $_POST['name'],
+        'nombre'     => $_POST['nombre'],
         'email'    => $_POST['email'],
         'mensaje'  => $_POST['mensaje']
     );
-    $json_string = json_encode($arr);
-    file_put_contents($file, $json_string);
-    echo $json_string;
+    $mensajes = json_encode($arr);
+    file_put_contents($file, $mensajes);
+    echo $mensajes;
 }
 
 ?>
@@ -27,27 +27,10 @@ if(isset($_POST['submit'])) {
 </head>
 
 <body>
-    <div class="container">
-        <div id="header">
-            <div class="main-header">
-                <img src="img/logo.jpg" alt="logo">
-                <input type="checkbox" id="menu-bar">
-                <label class="fas fa-bars" for="menu-bar"></label>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="index.php">inicio</a></li>
-                        <li><a href="ranking.php">ranking</a></li>
-                        <li><a href="perfil.php">perfil</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="ABM.php">ABM</a></li>
-                        <li><a href="contacto.php">contactanos</a></li>
-                        <li><a href="register.php">registrate</a></li>
-                        <li><a href="login.php">iniciar sesion</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <header>
+        <?php require_once("header.php"); ?>
+      </header>
     <div class="main">
         <div class="contenido">
             <div class=main-container>
@@ -79,19 +62,9 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
     <div id="footer">
-        <img src="img/logo.jpg">
-        <div class="block-footer">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="login.php">Iniciá sesión</a></li>
-                <li><a href="ranking.php">Ranking</a></li>
-                <li><a href="perfil.php">Perfil</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-                <li><a href="ABM.php">ABM</a></li>
-                <li><a href="faq.php">Preguntas frecuentes</a></li>
-
-            </ul>
-        </div>
+       <footer>
+       <?php require_once("footer.php")?>
+       </footer>
     </div>
 
 </body>
