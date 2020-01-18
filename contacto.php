@@ -1,23 +1,17 @@
 <?php
 
-require_once('controladores/validacionContacto.php');
-
-
-if($_POST) {
-
-    $errores = validacionDeMensaje($_POST);
-
-    if (!$errores) {
-
-        $datos = guardarMensaje ($_POST);
-
-        $todosLosDatos = json_encode ($datos);
-        file_put_contents ("mensajes.json", $todosLosDatos);
-
-        header ("Location: index.php");
-    }
-
+if(isset($_POST['submit'])) {
+    $file = "mensajes.json";
+    $arr = array(
+        'nombre'     => $_POST['name'],
+        'email'    => $_POST['email'],
+        'mensaje'  => $_POST['mensaje']
+    );
+    $json_string = json_encode($arr);
+    file_put_contents($file, $json_string);
+    echo $json_string;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -63,31 +57,21 @@ if($_POST) {
                             <h2>CONTACTANOS</h2>
                         </div> <br>
                         <form action="" method="post">
-
-                        <div class="form-nombre">
-                            <label class="nombre" for="nombre">Nombre</label><br> <br>
-                            <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre">
-                            <?php if(isset($errores["nombre"])): ?>
-                            <span style="color:red;"><?= $errores["nombre"]?></span>
-                            <?php endif; ?>
-                        </div> <br>
-                        <div class="form-email">
-                            <label class="email" for="email">Correo electrónico</label><br> <br>
-                            <input id="email" type="email" name="email" placeholder="Ingrese su email">
-                            <?php if(isset($errores['email'])): ?>
-                              <span style="color:red;"><?= $errores['email']?></span>
-                              <?php endif;?>
-                        </div> <br>
-                        <div class="form-message">
-                            <label class="mensaje" for="mensaje">Mensaje</label><br> <br>
-                            <input id ="mensaje" type="comment" name = "mensaje" placeholder = "Escriba su mensaje...">
-                            <?php if(isset($errores["mensaje"])): ?>
-                              <span style="color:red;"><?= $errores["mensaje"]?></span>
-                              <?php endif;?>
-                        </div>
-                        <div class="formulario-button">
-                            <button type="submit" name="button">Enviar</button>
-                        </div>
+                            <div class="form-nombre">
+                                <label class="nombre" for="nombre">Nombre</label><br> <br>
+                                <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre">
+                            </div> <br>
+                            <div class="form-email">
+                                <label class="email" for="email">Correo electrónico</label><br> <br>
+                                <input id="email" type="email" name="email" placeholder="Ingrese su email">
+                            </div> <br>
+                            <div class="form-message">
+                                <label class="mensaje" for="mensaje">Mensaje</label><br> <br>
+                                <input id="mensaje" type="comment" name="mensaje" placeholder="Escriba su mensaje...">
+                            </div>
+                            <div class="formulario-button">
+                                <input type="submit" name="submit" id="submit" value="Submit">
+                            </div>
                         </form>
                     </div>
                 </div>
