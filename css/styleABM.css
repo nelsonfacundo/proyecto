@@ -1,15 +1,8 @@
-@import url(menu.css);
-@import url(footer.css);
-
-
-
 @font-face
 {
   font-family: "grendel";
   src: url("../fuentes/grendel.ttf");
 }
-
-
 
 *{
   padding: 0;
@@ -17,13 +10,10 @@
   box-sizing: border-box;
  }
 
-
-body {
+body
+{
   font-family: grendel;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   color: white;
-  background-image: url("../img/fondo.jpg");
 }
 
 h1
@@ -39,10 +29,12 @@ h1
   margin-inline-end: 0px;
 }
 
-
 .container
 {
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("../img/fondo.jpg");
 }
 .contenido
 {
@@ -55,7 +47,6 @@ h1
   background-color: black;
   background-size: 100% auto;
   min-height: 600px;
-
 }
 
 section

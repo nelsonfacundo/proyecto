@@ -16,7 +16,7 @@ if($_POST) {
 
         header ("Location: index.php");
     }
-    
+
 }
 ?>
 
@@ -63,7 +63,7 @@ if($_POST) {
                             <h2>CONTACTANOS</h2>
                         </div> <br>
                         <form action="" method="post">
-                            
+
                         <div class="form-nombre">
                             <label class="nombre" for="nombre">Nombre</label><br> <br>
                             <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre">
