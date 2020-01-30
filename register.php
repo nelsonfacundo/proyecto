@@ -1,34 +1,27 @@
 <?php
   
+  require('controladores/funciones.php');
 
-require('controladores/validacionRegister.php');
+  if($_POST) {
 
-if($_POST) {
-
-    $errores = validar($_POST);
+    $errores = validarRegistro($_POST);
 
     if(!$errores) {
-        $usuario = guardarUsuario($_POST);
-
-        $listaDeUsuarios = file_get_contents('usuarios.json');
-
-        $arrayUsuarios = json_decode($listaDeUsuarios, true);
-
-        $arrayUsuarios[] = $usuario;
-
-        $todosLosUsuarios = json_encode($arrayUsuarios);
-
-        file_put_contents('usuarios.json', $todosLosUsuarios);
-
-
+    
+        $usuarioNuevo = crearUsuario($_POST);
+        $nombreImagen = guardarAvatar();
+        $usuarioNuevo['avatar'] = $nombreImagen;
+        guardarUsuario($usuarioNuevo);
         header('Location: login.php');
-        
+       
     }
 }
+  
+  
+  
+  ?>
 
 
-
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -71,17 +64,17 @@ if($_POST) {
                           <div class="subtitulo">
                               <h2>Registro</h2>
                           </div>
-                        <form action="" method="post">
+                        <form action="register.php" method="post" enctype="multipart/form-data" >
                           <div class="formulario-nombre">
                             <label for="username">Usuario:</label><br>
-                                <input id="username" type="text" name="username" placeholder="ingrese su usuario"><br/>
+                                <input id="username" type="text" name="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>" placeholder="ingrese su usuario"><br/>
                                <?php if(isset($errores['username'])): ?>
                                <span style="color:red;"><?= $errores['username']?></span>
                               <?php endif; ?>
                           </div>
                           <div class="formulario-email">
                             <label for="email">Email:</label><br>
-                              <input id="email" type="text" name="email" placeholder="ingrese su email"><br/>
+                              <input id="email" type="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="ingrese su email"><br/>
                               <?php if(isset($errores['email'])): ?>
                               <span style="color:red;"><?= $errores['email']?></span>
                               <?php endif;?>
@@ -100,24 +93,31 @@ if($_POST) {
                                <span style="color:red;"><?= $errores["repassword"]?></span>
                               <?php endif; ?>
                           </div>
+                          <div class="formulario-imagen">
+                            <label>Avatar:<label>
+                              <input type='file' name='avatar'><br>
+                                <?php if(isset($errores['avatar'])): ?>
+                              <span style="color:red;"><?= $errores['avatar']?></span>
+                             <?php endif; ?>
+                         </div>
                           <div class="formulario-edad">
                               <p>Fecha de nacimiento:</p>
                             <div class="block-display-edad">
                               <div class="formulario-mes">
                                   <label for="mes">Mes:</label><br>
                                     <select name="mes" id="mes">
-                                      <option value="enero">Enero </option>
-                                      <option value="febrero">Febrero </option>
-                                      <option value="marzo">Marzo </option>
-                                      <option value="abril">Abril</option>
-                                      <option value="mayo">Mayo </option>
-                                      <option value="junio">Junio </option>
-                                      <option value="julio">Julio </option>
-                                      <option value="agosto">Agosto </option>
-                                      <option value="septiembre">Septiembre </option>
-                                      <option value="octubre">Octumbre </option>
-                                      <option value="noviembre">Noviembre </option>
-                                      <option value="diciembre">Diciembre </option>
+                                      <option value="en">Enero </option>
+                                      <option value="fe">Febrero </option>
+                                      <option value="ma">Marzo </option>
+                                      <option value="ab">Abril</option>
+                                      <option value="may">Mayo </option>
+                                      <option value="jun">Junio </option>
+                                      <option value="jul">Julio </option>
+                                      <option value="ag">Agosto </option>
+                                      <option value="sep">Septiembre </option>
+                                      <option value="oct">Octumbre </option>
+                                      <option value="nov">Noviembre </option>
+                                      <option value="dic">Diciembre </option>
                                     </select>
                               </div>
                               <div class="formulario-dia">
@@ -194,9 +194,6 @@ if($_POST) {
                                 </div>
                               </div>
                           </div>
-                               <?php if(isset($errores["año"])): ?>
-                               <span style="color:red;"><?= $errores["año"]?></span>
-                              <?php endif; ?>
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>
@@ -212,14 +209,15 @@ if($_POST) {
             <img src="img/logo.jpg">
               <div class="block-footer">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="login.php">Iniciá sesión</a></li>
-                    <li><a href="ranking.php">Ranking</a></li>
-                    <li><a href="perfil.php">Perfil</a></li>
-                    <li><a href="contacto.php">Contacto</a></li>
-                    <li><a href="ABM.php">ABM</a></li>
-                    <li><a href="faq.php">Preguntas frecuentes</a></li>
-                 </ul>
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">Quienes</a></li>
+                   <li><a href="#">Servicios</a></li>
+                   <li><a href="#">Sucursales</a></li>
+                   <li><a href="contacto.html">Contacto</a></li>
+                   <li><a href="#">Terminos</a></li>
+                   <li><a href="#">Privacidad</a></li>
+                   <li><a href="#">Cookies</a></li>
+                    </ul>
               </div>
         </div>
     </div>
